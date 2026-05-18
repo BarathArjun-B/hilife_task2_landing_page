@@ -1,0 +1,18 @@
+project-folder
+│
+├── index.html
+│
+├── css
+│     └── style.css
+│
+├── js
+│     └── script.js
+│
+├── images
+│     ├── hero.png
+│     ├── chat.png
+│     ├── mobile.png
+│     ├── playbook.png
+│     ├── sms.png
+│     ├── whatsapp.png
+│     └── rbm.png
