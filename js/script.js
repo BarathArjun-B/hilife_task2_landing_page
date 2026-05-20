@@ -1,211 +1,48 @@
-// ==============================
-// Landing Page JavaScript
-// ==============================
-
-
-
-// ==============================
-// Select Form Inputs
-// ==============================
-
-const fullNameInput =
-document.querySelector('input[placeholder="Full Name"]');
-
-const emailInput =
-document.querySelector('input[placeholder="Business Email Address"]');
-
-const phoneInput =
-document.querySelector('input[placeholder="Phone Number"]');
-
-const requestButton =
-document.querySelector(".form-section button");
-
-
-
-// ==============================
-// Button Click Event
-// ==============================
-
-requestButton.addEventListener("click", function () {
-
-  // ==============================
-  // Get Input Values
-  // ==============================
-
-  const fullName =
-  fullNameInput.value;
-
-  const email =
-  emailInput.value;
-
-  const phone =
-  phoneInput.value;
-
-
-
-  // ==============================
-  // Validation
-  // ==============================
-
-  if (fullName === "") {
-
-    alert("Please Enter Full Name");
-
-    return;
-  }
-
-
-
-  if (email === "") {
-
-    alert("Please Enter Email Address");
-
-    return;
-  }
-
-
-
-  if (!email.includes("@")) {
-
-    alert("Please Enter Valid Email");
-
-    return;
-  }
-
-
-
-  if (phone === "") {
-
-    alert("Please Enter Phone Number");
-
-    return;
-  }
-
-
-
-  if (phone.length < 10) {
-
-    alert("Phone Number Must Be 10 Digits");
-
-    return;
-  }
-
-
-
-  // ==============================
-  // Console Output
-  // ==============================
-
-  console.log("Full Name :", fullName);
-
-  console.log("Email :", email);
-
-  console.log("Phone :", phone);
-
-
-
-  // ==============================
-  // Success Message
-  // ==============================
-
-  alert("Demo Request Submitted Successfully");
-
-
-
-  // ==============================
-  // Clear Inputs
-  // ==============================
-
-  fullNameInput.value = "";
-
-  emailInput.value = "";
-
-  phoneInput.value = "";
-
-});
-
-
-
-// ==============================
-// Navbar Hover Effect
-// ==============================
-
-const navLinks =
-document.querySelectorAll("nav a");
-
-
-
-navLinks.forEach(function(link) {
-
-  link.addEventListener("mouseenter", function() {
-
-    link.style.color = "#00aaff";
-
-  });
-
-
-
-  link.addEventListener("mouseleave", function() {
-
-    link.style.color = "white";
-
-  });
-
-});
-
-
-
-// ==============================
-// Card Hover Animation
-// ==============================
-
-const cards =
-document.querySelectorAll(
-".channel-card, .bottom-card"
-);
-
-
-
-cards.forEach(function(card){
-
-  card.addEventListener("mouseenter", function(){
-
-    card.style.transform = "translateY(-8px)";
-
-    card.style.transition = "0.3s";
-
-  });
-
-
-
-  card.addEventListener("mouseleave", function(){
-
-    card.style.transform = "translateY(0px)";
-
-  });
-
-});
-
-
-
-// ==============================
-// Smooth Scroll
-// ==============================
-
-document.querySelectorAll("a").forEach(function(anchor){
-
-  anchor.addEventListener("click", function(event){
-
+const demoForm = document.querySelector(".demo-form");
+const formMessage = document.querySelector(".form-message");
+const navbarCollapse = document.querySelector(".navbar-collapse");
+
+if (demoForm) {
+  demoForm.addEventListener("submit", function (event) {
     event.preventDefault();
 
-  });
+    const fullName = document.querySelector("#fullName").value.trim();
+    const email = document.querySelector("#businessEmail").value.trim();
+    const phone = document.querySelector("#phoneNumber").value.trim();
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+    if (!fullName || !email || !phone) {
+      showFormMessage("Please complete all fields.", false);
+      return;
+    }
+
+    if (!emailPattern.test(email)) {
+      showFormMessage("Please enter a valid business email address.", false);
+      return;
+    }
+
+    if (phone.replace(/\D/g, "").length < 10) {
+      showFormMessage("Please enter a valid phone number.", false);
+      return;
+    }
+
+    showFormMessage("Thanks. Your demo request has been submitted.", true);
+    demoForm.reset();
+  });
+}
+
+document.querySelectorAll(".navbar .nav-link").forEach(function (link) {
+  link.addEventListener("click", function () {
+    if (!navbarCollapse || !navbarCollapse.classList.contains("show") || typeof bootstrap === "undefined") {
+      return;
+    }
+
+    const collapse = bootstrap.Collapse.getOrCreateInstance(navbarCollapse);
+    collapse.hide();
+  });
 });
 
-
-
-// ==============================
-// Console Message
-// ==============================
-
-console.log("Landing Page Loaded Successfully");
+function showFormMessage(message, isSuccess) {
+  formMessage.textContent = message;
+  formMessage.style.color = isSuccess ? "#ffffff" : "#ffb199";
+}

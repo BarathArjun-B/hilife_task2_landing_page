@@ -2,329 +2,216 @@
 <html lang="en">
 
 <head>
-
   <meta charset="UTF-8">
-
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LivePerson Landing Page</title>
-
-  <link rel="stylesheet"
-        href="css/style.css">
-
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+  <header class="site-header">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container page-container">
+        <a class="navbar-brand brand-mark" href="#">
+          <span class="brand-icon"></span>
+          LIVEPERSON
+        </a>
 
-  <!-- Navbar -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+          aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-  <header class="navbar">
+        <div class="collapse navbar-collapse" id="mainNavbar">
+          <ul class="navbar-nav nav-center mx-auto">
+            <li class="nav-item"><a class="nav-link" href="#solutions">Solutions</a></li>
+            <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+            <li class="nav-item"><a class="nav-link" href="#resources">Resources</a></li>
+            <li class="nav-item"><a class="nav-link" href="#company">Company</a></li>
+          </ul>
 
-    <div class="logo">
-
-      LIVEPERSON
-
-    </div>
-
-    <nav>
-
-      <a href="#">Solutions</a>
-
-      <a href="#">Products</a>
-
-      <a href="#">Resources</a>
-
-      <a href="#">Company</a>
-
+          <a class="btn signin-btn" href="#">Sign in</a>
+        </div>
+      </div>
     </nav>
-
-    <button class="signin-btn">
-
-      Sign in
-
-    </button>
-
   </header>
 
-  <!-- Hero -->
+  <main>
+    <section class="hero-section">
+      <div class="container page-container">
+        <div class="row align-items-center hero-row">
+          <div class="col-lg-5">
+            <div class="hero-copy">
+              <h1>Improve conversion rates with proactive two-way messaging</h1>
+              <p>
+                With LivePerson's Proactive Messaging, brands can initiate marketing and customer care conversations over
+                a variety of communication channels.
+              </p>
+            </div>
+          </div>
 
-  <section class="hero">
-
-    <div class="hero-left">
-
-      <h1>
-
-        Improve conversion
-        rates with proactive
-        two-way messaging
-
-      </h1>
-
-      <p>
-
-        With LivePerson's Proactive Messaging,
-        brands can initiate marketing and
-        customer care conversations over
-        a variety of communication channels.
-
-      </p>
-
-    </div>
-
-    <div class="hero-right">
-
-      <img src="images/hero.png">
-
-    </div>
-
-  </section>
-
-  <!-- Form -->
-
-  <section class="form-section">
-
-    <input type="text"
-           placeholder="Full Name">
-
-    <input type="email"
-           placeholder="Business Email Address">
-
-    <input type="text"
-           placeholder="Phone Number">
-
-    <button>
-
-      Request demo
-
-    </button>
-
-  </section>
-
-  <!-- Conversations -->
-
-  <section class="conversation-section">
-
-    <h2>
-
-      Create conversations, not spam
-
-    </h2>
-
-    <div class="conversation-row">
-
-      <img src="images/chat.png">
-
-      <div class="conversation-content">
-
-        <h3>
-
-          Campaigns that convert
-
-        </h3>
-
-        <p>
-
-          Sending emails and one-way marketing texts is
-          a missed opportunity to capture leads,
-          schedule an appointment, or sell directly in a
-          messaging channel.
-
-        </p>
-
-      </div>
-
-    </div>
-
-    <div class="conversation-row reverse">
-
-      <div class="conversation-content">
-
-        <h3>
-
-          Better care experiences
-
-        </h3>
-
-        <p>
-
-          Don't make consumers call or visit a
-          website to get support or information.
-
-        </p>
-
-      </div>
-
-      <img src="images/mobile.png">
-
-    </div>
-
-  </section>
-
-  <!-- Channels -->
-
-  <section class="channels">
-
-    <div class="channel-left">
-
-      <h2>
-
-        Popular channels, rich results
-
-      </h2>
-
-      <div class="channel-cards">
-
-        <div class="channel-card">
-
-          <img src="images/sms.png">
-
-          <p>SMS</p>
-
+          <div class="col-lg-7">
+            <div class="hero-media">
+              <img src="images/hero.png" alt="Proactive messaging video preview">
+            </div>
+          </div>
         </div>
 
-        <div class="channel-card">
+        <form class="demo-form" novalidate>
+          <div class="row g-4 align-items-center">
+            <div class="col-lg-3 col-md-6">
+              <label class="visually-hidden" for="fullName">Full Name</label>
+              <input id="fullName" name="fullName" type="text" placeholder="Full Name">
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <label class="visually-hidden" for="businessEmail">Business Email Address</label>
+              <input id="businessEmail" name="businessEmail" type="email" placeholder="Business Email Address">
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <label class="visually-hidden" for="phoneNumber">Phone Number</label>
+              <input id="phoneNumber" name="phoneNumber" type="tel" placeholder="Phone Number">
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <button class="btn demo-btn" type="submit">Request demo</button>
+            </div>
+          </div>
+          <p class="form-message" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
 
-          <img src="images/whatsapp.png">
+    <section class="conversation-section section-slope-top" id="solutions">
+      <div class="container narrow-container">
+        <h2 class="section-title text-center">Create conversations, not spam</h2>
 
-          <p>WhatsApp</p>
+        <div class="row align-items-center feature-row">
+          <div class="col-lg-6">
+            <div class="feature-image chat-image">
+              <img src="images/chat.png" alt="Messaging campaign preview">
+            </div>
+          </div>
 
+          <div class="col-lg-5 offset-lg-1">
+            <div class="feature-copy">
+              <h3>Campaigns that convert</h3>
+              <p>
+                Sending emails and one-way marketing texts is a missed opportunity to capture leads, schedule an
+                appointment, or sell directly in a messaging channel. Cut through the noise and engage your consumers
+                with targeted, two-way messaging that outperforms traditional tactics.
+              </p>
+            </div>
+          </div>
         </div>
 
-        <div class="channel-card">
+        <div class="row align-items-center feature-row second-row">
+          <div class="col-lg-5">
+            <div class="feature-copy">
+              <h3>Better care experiences</h3>
+              <p>
+                Don't make consumers call or visit a website to get support or information. Instead, use our outbound
+                business messaging solution for proactive account updates, service outages, and more, reducing inbound
+                call volume and increasing customer satisfaction.
+              </p>
+            </div>
+          </div>
 
-          <img src="images/rbm.png">
-
-          <p>Google RBM</p>
-
+          <div class="col-lg-6 offset-lg-1">
+            <div class="feature-image phone-image">
+              <img src="images/mobile.png" alt="Mobile care message preview">
+            </div>
+          </div>
         </div>
-
       </div>
+    </section>
 
-    </div>
+    <section class="channels-section section-slope-top section-slope-bottom" id="products">
+      <div class="container narrow-container">
+        <div class="row align-items-center">
+          <div class="col-lg-7">
+            <h2 class="section-title channels-title">Popular channels, rich results</h2>
+            <div class="channel-grid">
+              <article class="channel-card">
+                <img src="images/sms.png" alt="">
+                <h3>SMS</h3>
+              </article>
+              <article class="channel-card">
+                <img src="images/whatsapp.png" alt="">
+                <h3>WhatsApp</h3>
+              </article>
+              <article class="channel-card">
+                <img src="images/rbm.png" alt="">
+                <h3>Google RBM</h3>
+              </article>
+            </div>
+          </div>
 
-    <div class="stats">
-
-      <div class="stat-box">
-        95% open rate
+          <div class="col-lg-4 offset-lg-1">
+            <div class="stats-list">
+              <div class="stat-card"><span class="stat-icon stat-chat" aria-hidden="true"></span><strong>95%</strong> open rate</div>
+              <div class="stat-card"><span class="stat-icon stat-convert" aria-hidden="true"></span><strong>14%</strong> conversion rate</div>
+              <div class="stat-card"><span class="stat-icon stat-response" aria-hidden="true"></span><strong>32%</strong> response rate</div>
+              <div class="stat-card"><span class="stat-icon stat-score" aria-hidden="true"></span><strong>90+</strong> CSAT scores</div>
+            </div>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <div class="stat-box">
-        14% conversion rate
+    <section class="playbook-section" id="resources">
+      <div class="container narrow-container">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <div class="playbook-image">
+              <img src="images/playbook.png" alt="Proactive Messaging Playbook">
+            </div>
+          </div>
+
+          <div class="col-lg-5 offset-lg-1">
+            <div class="playbook-copy">
+              <h2>Download the Proactive Messaging playbook</h2>
+              <p>Learn how to send two-way text messages with SMS, WhatsApp, and Google RBM among others.</p>
+              <a href="#">Download playbook <span>&gt;</span></a>
+            </div>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <div class="stat-box">
-        32% response rate
+    <section class="learn-section section-slope-top" id="company">
+      <div class="container page-container">
+        <h2 class="section-title text-center">Learn more about going Conversational</h2>
+
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <article class="info-card">
+              <h3>Acquire more customers</h3>
+              <p>Conversationalize your funnel to fuel a greater return on your marketing investment.</p>
+              <a href="#">Learn more <span>&gt;</span></a>
+            </article>
+          </div>
+          <div class="col-lg-4">
+            <article class="info-card">
+              <h3>Convert inbound calls to messaging conversations</h3>
+              <p>Offer callers "press 1 to start messaging us." 8 out of 10 people prefer messaging to voice. Cut your
+                expensive call volume in half in 100 days.</p>
+              <a href="#">Learn more <span>&gt;</span></a>
+            </article>
+          </div>
+          <div class="col-lg-4">
+            <article class="info-card">
+              <h3>Measure and improve your conversations</h3>
+              <p>Our AI engine tracks every consumer inquiry and delivers actionable data to make fast optimizations.</p>
+              <a href="#">Learn more <span>&gt;</span></a>
+            </article>
+          </div>
+        </div>
       </div>
+    </section>
+  </main>
 
-      <div class="stat-box">
-        90+ CSAT scores
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- Playbook -->
-
-  <section class="playbook">
-
-    <img src="images/playbook.png">
-
-    <div class="playbook-content">
-
-      <h2>
-
-        Download the
-        Proactive Messaging
-        playbook
-
-      </h2>
-
-      <p>
-
-        Learn how to send two-way text messages.
-
-      </p>
-
-      <a href="#">
-
-        Download playbook →
-
-      </a>
-
-    </div>
-
-  </section>
-
-  <!-- Bottom Cards -->
-
-  <section class="bottom-section">
-
-    <h2>
-
-      Learn more about going Conversational
-
-    </h2>
-
-    <div class="bottom-cards">
-
-      <div class="bottom-card">
-
-        <h3>
-
-          Acquire more customers
-
-        </h3>
-
-        <p>
-
-          Conversationalize your funnel.
-
-        </p>
-
-      </div>
-
-      <div class="bottom-card">
-
-        <h3>
-
-          Convert inbound calls to
-          messaging conversations
-
-        </h3>
-
-        <p>
-
-          Offer callers text messaging.
-
-        </p>
-
-      </div>
-
-      <div class="bottom-card">
-
-        <h3>
-
-          Measure and improve your
-          conversations
-
-        </h3>
-
-        <p>
-
-          Analyze customer engagement.
-
-        </p>
-
-      </div>
-
-    </div>
-
-  </section>
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/script.js"></script>
-
 </body>
 
 </html>
